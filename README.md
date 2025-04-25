@@ -2,6 +2,8 @@
 
 A production-ready React starter template with best practices built in. Features lightning-fast development, type safety, and modern styling out of the box.
 
+🌐 **Live Demo:** [https://nova-stack-nine.vercel.app/](https://nova-stack-nine.vercel.app/)
+
 ![Hero Section](/public/landing-page.png)
 
 ## ✨ Key Features
@@ -88,11 +90,17 @@ npm run type-check
 
 ## 🚀 Deployment
 
-[Cloudflare Pages](https://pages.cloudflare.com/) is my first option to deploy React App，follow [this documentation](https://developers.cloudflare.com/pages/framework-guides/deploy-a-react-site/#deploying-with-cloudflare-pages) to deploy your site. Don't forget build directory should choose `dist`
+This project is deployed on [Vercel](https://vercel.com). You can see the live version at [https://nova-stack-nine.vercel.app/](https://nova-stack-nine.vercel.app/).
 
-[Vercel](https://pages.cloudflare.com/) is a good option too，Go to [Vercel](https://vercel.com/new) and link to your Git Repo
+To deploy your own version:
 
-Enjoy building.
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com/new)
+3. Import your Git repository
+4. Vercel will automatically detect the build settings
+5. Click "Deploy"
+
+The deployment will be automatic for future pushes to your repository.
 
 ## 🤝 Contributing
 
