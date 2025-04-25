@@ -6,11 +6,14 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
-    "build": "npm run typecheck && vite build",
+    "dev:seo": "node scripts/dev-with-seo.js",
+    "build": "npm run typecheck && tsc && vite build && npm run generate-sitemap && npm run notify-search-engines",
     "typecheck": "tsc --noEmit",
     "typecheck:watch": "tsc --noEmit --watch",
     "lint": "eslint --quiet src --ext .ts,.tsx && stylelint src/**/*.less",
-    "lint:fix": "eslint --quiet --fix src --ext .ts,.tsx && stylelint --fix src/**/*.less"
+    "lint:fix": "eslint --quiet --fix src --ext .ts,.tsx && stylelint --fix src/**/*.less",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "notify-search-engines": "node scripts/ping-search-engines.js"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.6",
@@ -37,6 +40,7 @@
     "@typescript-eslint/parser": "^5.58.0",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
+    "chokidar": "^4.0.3",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -48,10 +52,12 @@
     "husky": "^8.0.3",
     "less": "^4.1.3",
     "lint-staged": "^13.2.1",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.21",
     "postcss-less": "^6.0.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.4.1",
+    "sitemap": "^8.0.0",
     "stylelint": "^15.4.0",
     "stylelint-config-standard": "^32.0.0",
     "stylelint-less": "^1.0.6",

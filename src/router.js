@@ -1,31 +1,20 @@
-import React from 'react'
-import { createHashRouter, RouteObject } from 'react-router-dom'
+import { jsx as _jsx } from 'react/jsx-runtime'
+import { createHashRouter } from 'react-router-dom'
 import ErrorPage from './components/error-page'
 import { getDefaultLayout } from './components/layout'
 import HomePage from './pages/home'
-import AboutPage from './pages/about'
-
-export const routerObjects: RouteObject[] = [
+export const routerObjects = [
   {
     path: '/',
     Component: HomePage,
   },
-  {
-    path: '/about',
-    Component: AboutPage,
-  },
-  {
-    path: '/features',
-    Component: AboutPage, // temporarily reusing AboutPage component
-  },
 ]
-
-export function createRouter(): ReturnType<typeof createHashRouter> {
+export function createRouter() {
   const routeWrappers = routerObjects.map((router) => {
     // @ts-ignore TODO: better type support
     const getLayout = router.Component?.getLayout || getDefaultLayout
-    const Component = router.Component!
-    const page = getLayout(<Component />)
+    const Component = router.Component
+    const page = getLayout(_jsx(Component, {}))
     return {
       ...router,
       element: page,
@@ -35,3 +24,4 @@ export function createRouter(): ReturnType<typeof createHashRouter> {
   })
   return createHashRouter(routeWrappers)
 }
+//# sourceMappingURL=router.js.map
