@@ -95,7 +95,10 @@ export const WorkflowGuide = () => {
               size={'lg'}
               asChild
             >
-              <a href="https://github.com/Vasu-Vallabh/nova-stack#run" className="flex items-center gap-2">
+              <a
+                href="https://github.com/Vasu-Vallabh/nova-stack?tab=readme-ov-file#-key-features"
+                className="flex items-center gap-2"
+              >
                 View Full Documentation
               </a>
             </Button>
